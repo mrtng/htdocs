@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* CSS Document */
+.top-bar {
+	z-index:9999;
+	width: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	background-image:url(../img/hexinvertbig.svg);
+	background-position:center;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.8);
+	box-shadow: 0 0 3px rgba(0,0,0,0.8);
+	height:75px;
+}
+.row {
+	width: 1024px;
+	height:100%;
+	margin: 0 auto;
+	direction: ltr;
+}
+.adm_row {
+	width: 100%;
+	max-width:1280px;
+	height:100%;
+	margin: 0 auto;
+	direction: ltr;
+}
+#hex {
+	display:none;	
+}
+#hexinvert {
+	background:rgba(255,255,255,0) !important;
+	z-index:11000 !important;
+	
+	display:none;
+}
+a.row-text-link:link, a.row-text-link:visited, a.row-text-link-adm:link, a.row-text-link-adm:visited {
+	text-decoration:none;
+	color: #FFF;
+}
+a.row-text-link:focus, a.row-text-link:hover, a.row-text-link-adm:focus, a.row-text-link-adm:hover {
+	text-decoration:none;
+	color:#676767;
+}
+.row-text {
+	display:block;
+	position:relative;
+	width:40%;
+	float:left;
+	text-align:center;
+	font-size:20px;
+	height:auto;
+	/*padding-top: 2.5%;*/
+}
+#left {
+	display: table;
+}
+.adm_row-text {
+	width:200px !important;
+	font-size:16px !important;
+	text-align:center !important;
+	/*display:block;*/
+	position:relative;
+	float:right;
+	/*padding-top: 1%; /*2.5%*/
+	/*line-height:75px;*/
+	display: table-cell;
+    vertical-align: middle;
+	height:75px;
+}
+.adm_col {
+	height:75px;
+	width:640px;
+	margin: 0 0 0 0 !important;
+}
+.adm_col #left {
+	height:inherit;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+.adm_col #right {
+	height:inherit;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+	
+a.row-text-link:active {
+	text-decoration:none;
+}
+.row-text-link-adm {
+	width:100%;
+	height:75px;
+	/*line-height:75px;*/
+	text-align:center;
+}
+.row-text-link {
+	height:75px;
+}
+.row ul {
+	height:100%;
+}
+.row-text a {
+	width:50%;
+	position:relative;
+	float:left;
+}
+
+#parent {display: table;}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+}

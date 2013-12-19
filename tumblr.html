@@ -1,0 +1,1356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="if:Show Twitter widget" content="0"/>
+<meta name="if:Use Infinite Scroll" content="0"/>
+<meta name="if:Show Facebook link" content="0"/>
+<meta name="text:Facebook Username" content=""/>
+<meta name="if:Show Flickr link" content="0"/>
+<meta name="text:Flickr Username" content=""/>
+<meta name="color:Background" content="#FFFFFF"/>
+<meta name="color:Content Background" content="#FFFFFF"/>
+<meta name="color:Text" content="#252525"/>
+<meta name="color:Link" content="#252525"/>
+<meta name="color:Separator" content="#252525"/>
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}"/>
+<link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+
+//jQuery for dynamic content
+
+$(document).ready(function() {
+
+$("a#aboutpage").click(function() {
+
+window.scrollTo(0,0);
+$(".post-search").removeClass('visible').hide();
+$(".post-twitter").removeClass('visible').hide();
+$("div.post-about").fadeIn(1500);
+
+return false;
+
+});
+
+$("a#searchpage").click(function() {
+
+window.scrollTo(0,0);
+$(".post-about").removeClass('visible').hide();
+$(".post-twitter").removeClass('visible').hide();
+$("div.post-search").fadeIn(1500);
+
+return false;
+
+});
+
+$("a#twitterpage").click(function() {
+
+window.scrollTo(0,0);
+$(".post-about").removeClass('visible').hide();
+$(".post-search").removeClass('visible').hide();
+$("div.post-twitter").fadeIn(1500);
+
+return false;
+
+});
+
+});
+
+</script>
+
+
+<style type="text/css">
+
+/* Global Styles */
+
+* {
+padding: 0px;
+margin: 0px; 
+}
+
+body {
+font-family:'Helvetica Neue', Helvetica, sans-serif;
+color:{color:Text};
+font-size:10px;
+background-color: {color:Content Background};
+}
+
+a {color:{color:Link}; text-decoration:none;}
+
+a:link {text-decoration:none;}
+
+a:hover {text-decoration:underline;}
+
+a:active {text-decoration:none;}
+
+a img {border:none 0px;}        
+
+h2 {
+font-size:20px;
+}
+
+
+/* Main Layout Styles */
+
+#container {
+width:751px;
+margin-left:100px;
+margin-top:56px;
+}
+
+#sidebar {
+width:150px;
+height:auto;
+float:left;
+clear:both;
+position:fixed;
+}
+
+#rightborder {
+border-right: {color:Separator} solid 1px;
+width:1px;
+height:218px;
+float:right;
+margin-top:40px;
+}
+
+#logo {
+width:48px;
+height:48px;
+position:absolute;  
+top:12px;
+left:0px;        
+}
+
+#overlay {
+width:64px;
+height:64px;
+position:relative;
+top:11px;
+left:-2px;
+}
+
+#menu {
+margin-top:17px;
+}
+
+#menu ul {
+list-style:none;
+list-style-type:none;
+padding-left: 0px;
+margin-left: 0px;
+}
+
+#menu ul li {
+padding-bottom:4px;	
+}
+
+#sidebar-footer {
+margin-top:20px;
+}
+
+#sidebar-footer a {
+font-style:italic;
+text-decoration:none;	
+}
+
+#sidebar-footer a:hover {
+font-style:italic;
+text-decoration:underline;	
+}
+
+#sidebar-nav {
+margin-top: 18px;
+}
+
+#menu ul li {
+padding-bottom:4px;	
+}
+
+#blogroll {
+width:558px;
+margin-left:195px;
+position:absolute;
+min-height:300px;
+padding-bottom:27px;
+}
+
+#posts {
+width:500px;	
+margin-top:60px;
+}
+
+.tumblrAutoPager_page_info, .tumblrAutoPager_page_separator {
+  display:none;
+}
+
+/* Global Post Styles */
+
+.post-head {
+float:left;
+clear:both;
+}
+
+.post-meta {
+float:left;
+clear:both;
+}
+
+.meta-date{
+height:1px;
+width:11px;
+margin-bottom:8px;	
+}
+
+.cat {
+max-width:125px;
+min-height:10px;	
+}
+
+.perma {
+margin-top:4px;
+}
+
+.perma a:hover {
+text-decoration:underline;
+}
+
+.footer {
+float:left;
+clear:both;
+margin-left:120px;
+font-style:italic;
+margin-bottom:70px;
+min-height:10px;
+}
+
+.footer p {
+margin-bottom:10px;
+}
+
+.notecount {
+margin-top:30px;
+}
+
+.postnotes {
+margin-top:30px;     
+}
+
+.postnotes ol.notes {
+list-style:none inside none;
+margin-left: 0px;
+padding=left: 0px;
+
+}
+
+.postnotes ol.notes li {
+list-style:none;
+}
+
+.postnotes ol.notes li span {
+font-style:normal;
+}
+
+.postnotes ol.notes li span.action {
+margin-left: 0px;
+padding=left: 0px;
+line-height:17px;
+}
+
+.postnotes ol.notes li span a {
+font-style:italic;
+}
+
+.postnotes ol.notes li.note {
+margin-left: 0px;
+padding=left: 0px;
+}
+
+.postnotes ol.notes li a img.avatar {
+display:none;
+}
+
+a.more_notes_link {
+margin-right:260px;
+}
+
+.more_notes_link_container {
+margin-top:20px;
+}
+
+.more_notes_link_container span{
+margin-right:290px;
+}
+
+.italic {
+font-style:italic;
+}
+
+.visible {
+display:block;
+}
+
+/* About Styles */
+
+.about-title {
+margin-top:40px;
+margin-left:120px;
+margin-bottom:20px;
+}
+
+.post-about {
+min-height:200px;
+display:none;
+}
+
+#about {
+float:left;
+clear:both;
+margin-left:120px;
+min-width:500px;
+}
+
+#about p {
+margin-bottom:5px;
+line-height:17px;	
+}
+
+#about ul {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+#about ul li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+#about ol {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+#about ol li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+#about a {
+font-style:italic;
+}
+
+/* Search Styles */
+
+.post-search {
+min-height:200px;
+display:none;
+}
+
+.search-title {
+margin-top:40px;
+margin-left:120px;
+margin-bottom:20px;
+}
+
+#search {
+float:left;
+clear:both;
+margin-left:120px;
+min-width:500px;
+}
+
+#search p {
+margin-bottom:5px;	
+}
+
+/* Twitter Styles */
+
+.post-twitter {
+min-height:200px;
+display:none;
+} 
+
+.twitter-title {
+margin-top:40px;
+margin-left:120px;
+margin-bottom:20px;
+}
+
+#tweets {
+float:left;
+clear:both;
+margin-left:120px;
+min-width:500px;
+}
+
+#tweets a div {
+margin-bottom:7px;
+}
+
+
+/* Text Post Styles */
+
+.post-text {}
+
+
+.post-title {
+margin-bottom:20px;
+min-height:14px;
+}
+
+.body {
+float:left;
+clear:both;
+margin-left:120px;
+min-width:500px;
+}
+
+.body p {
+margin-bottom:5px;
+line-height:17px;	
+}
+
+.body p a {
+font-style:italic;	
+}
+
+.body ul {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+.body ul li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+.body ol {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+.body ol li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+.post-text img {
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.caption {
+float:left;
+clear:both;
+margin-top:20px;
+margin-left:120px;
+width:500px;
+}
+
+
+/* Photo Post Styles */
+
+.post-photo {}
+
+.photo {
+float:left;
+clear:both;
+margin-left:120px;
+}
+
+.photo a img {
+border:0px none;
+}
+
+.post-photo p {
+margin-bottom:5px;	
+}
+
+.post-photo ol {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+.post-photo ol li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+.post-photo ul {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+.post-photo ul li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+.caption p img {
+margin-top:12px;
+}
+
+.caption a {
+font-style:italic;
+}
+
+.caption p {
+line-height:17px;
+} 
+
+
+/* Photoset Post Styles */
+
+.photoset {
+float:left;
+clear:both;
+margin-left:60px;
+}
+
+.post-photoset p {
+margin-bottom:5px;	
+}
+
+.post-photoset ol {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+.post-photoset ol li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+.post-photoset ul {
+margin-bottom:7px;
+margin-top:7px;	
+}
+
+.post-photoset ul li {
+list-style-position:inside;
+margin-left:10px;
+}
+
+
+/* Quote Post Styles */
+
+.quote {
+float:left;
+clear:both;
+margin-left:120px;
+}
+
+.quote h2 {
+line-height:30px;
+}
+
+.quote-source {
+float:left;
+clear:both;
+min-width:500px;
+margin-top:20px;
+}
+
+
+/* Link Post Styles */
+
+.link {
+margin-bottom:20px;
+}
+
+.link-caption {
+float:left;
+clear:both;
+width:500px;
+}
+
+.link-caption a {
+font-style:italic;
+}
+
+
+/* Audio Post Styles */
+
+.audio {
+float:left;
+clear:both;
+margin-left:120px;	
+}
+
+.audio-meta {
+margin-top:20px;
+}
+
+
+.audio-source {
+float:left;
+clear:both;
+margin-top:20px;
+}
+
+.audio-source p {
+line-height:16px;
+}
+
+.audio-source p a { 
+font-style:italic;
+}
+
+
+/* Video Post Styles */
+
+.video {
+float:left;
+clear:both;
+margin-left:120px;	
+}
+
+.video-source {
+float:left;
+clear:both;
+margin-top:20px;	
+}
+
+.video-source p {
+line-height:16px;
+}
+
+.video-source p a { 
+font-style:italic;
+}
+
+
+/* Ask Post Styles */
+
+.question {
+margin-bottom:20px;
+}
+
+.asker {
+margin-bottom:5px;
+}
+
+.asker a {
+font-style:italic;
+}
+
+.answer {
+float:left;
+clear:both;
+}
+
+
+/* Chat Post Styles */
+
+.chat-title {
+min-height:14px;
+margin-bottom:20px;
+font-style:normal;
+}
+
+.chat {
+margin-left:120px;
+font-style:italic;
+float:left;
+clear:both;
+margin-bottom:7px;
+}
+
+.chat ul {
+margin:0px;
+list-style:none;
+font-style:normal;
+}
+
+
+.chat ul li {
+margin-top:7px;
+list-style:none;
+font-style:normal;
+}
+
+.label {
+font-weight:bold;
+}
+
+{CustomCSS}
+
+</style>
+
+<script type=”text/javascript” src=”http://static.tumblr.com/q0etgkr/mFbkoqlkr/tumblrautopager.js”></script>
+    </head>
+    <body>
+     
+     <div id="container">
+     
+     	<div id="sidebar">
+     
+     		<div id="rightborder"></div>
+     	
+                        <div id="letter"></div>
+                        <div id="logo"><img src="{PortraitURL-48}"/></div>
+        		<div id="overlay"><a href="/">
+                         <img src="http://static.tumblr.com/fbpqdir/5n4l7foyf/mask.png" alt="Image Mask"/></a></div>
+     
+     			<div id="menu">
+     				<ul>
+        				<li><a id="Closeabout" href="/">Journal</a></li>
+                        <li><a id="aboutpage" href="#">About</a></li>
+                        {block:HasPages}		
+			{block:Pages}
+			<li><a href="{URL}" class="rounded">{Label}</a></li>
+			{/block:Pages}
+			{/block:HasPages}
+                        {block:AskEnabled}			          
+                        <li><a href="/ask">{AskLabel}</a></li>
+                        {/block:AskEnabled}
+                        {block:SubmissionsEnabled}
+			<li><a href="/submit">{SubmitLabel}</a></li>
+			{/block:SubmissionsEnabled}
+                        {block:IfShowTwitterWidget}
+                        {block:Twitter}
+                        <li><a id="twitterpage" href="#">Twitter</a></li>
+                        {/block:Twitter}
+                        {/block:IfShowTwitterWidget}
+                        {block:IfShowFacebookLink}
+                        <li>
+                        <a href="http://www.facebook.com/{text:Facebook Username}" target="_blank">
+                        Facebook</a>
+                        </li>
+                        {/block:IfShowFacebookLink}
+                        {block:IfShowFlickrLink}
+                        <li><a href="http://www.flickr.com/{text:Flickr Username}" target="_blank">
+                        Flickr
+                        </a>
+                        </li>
+                        {/block:IfShowFlickrLink}
+                        <li><a id="searchpage" href="#">Search</a></li>
+                        <li><a href="/archive">Archive</a></li>
+            		<li><a href="{RSS}">RSS</a></li>
+        		</ul>
+     			</div>
+            
+                <div id="sidebar-nav">
+                 {block:IfNotUseInfiniteScroll}
+                {block:PreviousPage}
+                <a style="margin-right:12px;" href="{PreviousPage}">« Previous</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a href="{NextPage}">Next &#187;</a>
+            {/block:NextPage}
+            {/block:IfNotUseInfiniteScroll}
+                </div>
+
+     		<div id="sidebar-footer">
+     				<p>Theme by 
+<a href="http://www.helloauan.com">helloauan</a>,<br/>
+            		powered by <a href="http://www.tumblr.com">tumblr</a>.</p>
+     		</div>
+
+</div>
+     
+     <div id="blogroll">
+       
+      <div id="posts">  
+<div class="post-about">
+<div class="post-head">
+<div class="post-meta">
+<div style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></div>
+</div>
+	<div class="about-title">
+                			<h3>About</h3>
+                		</div>
+                        	
+                    </div>      
+                    
+                   <div id="about">
+                   {Description}
+                    </div>      
+</div>
+<div class="post-search">
+<div class="post-head">
+<div class="post-meta">
+<div style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></div>
+</div>
+	<div class="search-title">
+                		<h3>Search for content</h3>
+                		</div>
+                        	
+                    </div>      
+                    
+                   <div id="search">
+                   <form action="/search" method="get">
+                   <input type="text" name="q" value="{SearchQuery}"/>
+                   <br/><br/>
+                   <input type="submit" value="Search"/>
+</form>
+                    </div>      
+</div>
+{block:IfShowTwitterWidget}
+{block:Twitter}
+<div class="post-twitter">
+<div class="post-head">
+<div class="post-meta">
+<div style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></div>
+</div>
+	<div class="twitter-title">
+                		      <h3><a href="http://twitter.com/{TwitterUsername}">@{TwitterUsername}</a></h3>
+                		</div>
+                        	
+                    </div>      
+                    
+                   <div id="tweets">   
+                   </div>
+<script>
+function recent_tweets(data) {
+            for (i=0; i<3; i++) {
+                document.getElementById("tweets").innerHTML = 
+                    document.getElementById("tweets").innerHTML + 
+                    '<a href="http://twitter.com/{TwitterUsername}/status/' + 
+                    data[i].id + '"><div class="content">' + data[i].text + 
+                    '</div></a>';
+            }
+            document.getElementById("twitter").style.display = 'block';
+        }
+
+</script>      
+</div>
+{/block:Twitter}
+{/block:IfShowTwitterWidget}
+<div class=“autopagerize_page_element”>
+<div id="blogcon">
+{block:Posts}
+            	{block:Text}
+           <div class="post-text">
+                     <div class="post-head">
+                        
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;">
+                            </p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                       {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                           
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> </div>
+                        	
+                 </div>				
+  <div class="body">
+
+                		{block:Title}<div class="post-title">
+                			<h3><a href="{Permalink}">{Title}</a></h3> 
+                		</div>{/block:Title}
+                        	  
+                   {Body}
+                   {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                    </div> 	
+                    
+                
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>           
+            </div>
+            {/block:Text}
+            
+            {block:Photo}
+            <div class="post-photo">
+                     <div class="post-head">   
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                          
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                            
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> 
+                        </div>
+                		               	
+                    </div>      
+                    
+                   <div class="photo">
+                    {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    </div>
+                    
+                    {block:Caption} 
+                    <div class="caption">
+                    {Caption}
+                    {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                    </div>
+                    {/block:Caption}
+                    
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                 
+            </div>
+           {/block:Photo}
+
+             {block:Photoset}
+            <div class="post-photoset">
+                      <div class="post-head">   
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                         
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                            
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> 
+                        </div>
+                		               	
+                    </div> 
+                    
+                   <div class="photoset">
+                     {Photoset-500}
+                    {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                    </div>
+                    
+                    {block:Caption} 
+                    <div class="caption">
+                    {Caption}
+                    </div>
+                    {/block:Caption}
+
+                    
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                 
+            </div>
+            {/block:Photoset}
+            
+            {block:Quote}
+             <div class="post-quote">
+                    <div class="post-head">    
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                          
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                            
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div>
+</div>                  
+ <div class="quote">
+                   <h2>"{Quote}"</h2>               
+                   
+                   {block:Source} 
+                   <div class="quote-source">
+                    ~ {Source}
+                   </div>
+                        </div>     
+               </div>
+     
+                   {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                   {/block:Source}              
+                    
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                 
+            </div>
+            {/block:Quote}
+            
+            {block:Link}
+            <div class="post-link">
+                     <div class="post-head">
+                        
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                    
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                          
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> 
+                        </div>               	
+                    </div>
+<div class="body">      
+		<div class="link">
+                			<h3><a href="{URL}"{Target}>{Name}</a></h3>
+                		</div>	
+   		   {block:Description} 
+                   <div class="link-caption">
+                   {Description}
+                    {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                    </div>
+                    {/block:Description}
+                    
+</div>
+                    
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                                                 
+            </div>
+            {/block:Link}
+            
+            {block:Audio}
+              <div class="post-audio">
+                     <div class="post-head">
+                        
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                           
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                         
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> 
+                        </div>
+                	  	               	
+                    </div>      
+                    <div class="audio">
+                   <p style="margin-bottom:20px;">{AudioPlayerBlack}</p>
+                   <div id="audio-meta">~ {block:TrackName}{TrackName}{/block:TrackName} - {block:Artist}{Artist}{/block:Artist}</div>                
+                   {block:Caption}
+                   <div class="audio-source">
+                    {Caption}
+                    {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>)  
+                    {/block:RebloggedFrom}
+                    </div>
+                    {/block:Caption}
+                    
+                    </div>
+                 
+                    
+                    
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+
+            </div>
+            {/block:Audio}
+            
+            {block:Video}
+            <div class="post-video">
+                     <div class="post-head">
+                        
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                        
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                           
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> 
+                        </div>
+                		               	
+                    </div>      
+                    
+                   <div class="video">
+                   <p>{Video-500}</p>               
+                   {block:Caption}
+                   <div class="video-source">
+                    {Caption}
+                    {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                    </div>
+                    {/block:Caption}
+                    
+                    </div>
+                    
+                    
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                 
+            </div>
+            {/block:Video}
+            
+            {block:Answer}
+<div class="post-ask">
+                     <div class="post-head">
+                        
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                        
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                           
+                            <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            </div> 
+                        </div>
+                        	
+                		
+<div class="body">
+          		<div class="question">
+                        <h2><a href="{Permalink}">{Question}</a></h2>
+                        </div>
+<div class="asker">
+                   <p>Asked by {Asker}</p>
+                   </div> 
+                 
+ <div class="answer">
+                   {Answer}
+                   </div>
+
+                        	
+                    </div>      
+                
+                  
+                   {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                   </div>
+
+                   
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                 
+            </div>
+            {/block:Answer}
+
+              {block:Chat}
+            <div class="post-chat">
+                     <div class="post-head">
+                        
+                        <div class="post-meta">
+                            <p style="height:1px;width:11px;background-color:#000;margin-bottom:8px;"></p>
+                            <div class="date">
+                            	{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}
+                            </div>
+                           
+                            {block:HasTags}
+                             <div class="cat">
+                            in {block:Tags}<span style="font-style:italic;"><a href="{TagURL}">{Tag} </a></span>{/block:Tags}
+                            </div>{/block:HasTags}
+                          
+   <div class="perma">
+                            	<a href="{Permalink}">Permalink &#187;</a>
+                            
+                            </div>
+                        </div>  
+                    </div>      
+			<div class="chat">
+
+                		<div class="chat-title">
+                			{block:Title} <h3><a href="{URL}">{Title}</a></h3>{/block:Title} 
+                		</div>
+                	        
+                            <ul>
+                            {block:Lines}
+                                    <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                            </ul> 
+                           {block:RebloggedFrom} 
+                    <br/>
+                    (via <a class="italic" href="{ReblogParentURL}">{ReblogParentName}</a>) 
+                    {/block:RebloggedFrom}
+                    </div>
+                    
+                   
+                    <div class="footer">
+                    {block:IndexPage} 
+                    {block:NoteCount}   
+                    <div class="notecount">
+                    <a href="{Permalink}">{NoteCountWithLabel}</a>
+                    </div>
+                    {/block:NoteCount}
+                    {/block:IndexPage}
+                    {block:PostNotes}  
+                    <div class="postnotes">
+                    <p>Notes:</p>
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    </div>
+                                                                 
+            </div>
+            {/block:Chat}
+            
+           {/block:Posts}
+</div>      
+        </div>
+       </div>
+ 
+       </div>             
+
+     </div>
+{block:IfShowTwitterWidget}
+{block:Twitter}
+<script type="text/javascript" src="/tweets.js"></script>
+{/block:Twitter}
+{/block:IfShowTwitterWidget}
+{block:IfUseInfiniteScroll}
+<script type="text/javascript" src="http://proto.jp/js/tumblrAutoPager.js"></script>
+{/block:IfUseInfiniteScroll}     
+    </body>
+</html> 

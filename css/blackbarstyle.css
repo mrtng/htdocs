@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* CSS Document */
+.top-bar {
+	z-index:9999;
+	width: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	background-image:url(../img/hexinvertbig.svg);
+	background-position:center;
+	/*background-repeat:no-repeat;*/
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.8);
+	box-shadow: 0 0 3px rgba(0,0,0,0.8);
+	height:75px;
+}
+.row {
+	max-width: 1024px;
+	height:100%;
+	margin: 0 auto;
+	direction: ltr;
+	/*line-height: 16px;*/
+}
+.adm_row {
+	width: 100%;
+	max-width:1280px;
+	height:100%;
+	margin: 0 auto;
+	direction: ltr;
+	/*margin-left: -10px;
+	line-height: 16px;
+	alignment-adjust:central;*/
+}
+#hex {
+	display:none;	
+}
+#hexinvert {
+	background:rgba(255,255,255,0) !important;
+	z-index:11000 !important;
+	
+	display:none;
+}
+a.row-text-link:link, a.row-text-link:visited, a.row-text-link-adm:link, a.row-text-link-adm:visited {
+	text-decoration:none;
+	color: #FFF;
+}
+a.row-text-link:focus, a.row-text-link:hover, a.row-text-link-adm:focus, a.row-text-link-adm:hover {
+	text-decoration:none;
+	color:#676767;
+}
+.row-logo {
+	z-index:9998 !important;
+	display:block;
+	position:relative;
+	width:20%;
+	height:75px;
+	float:left;
+	text-align:center;
+	/*padding-top: 1.1%;*/ /*2,5%*/
+	cursor:default;
+	background-image:url('../img/logogif.gif');
+	/*color:rgba(255,255,255,0.3);*/
+	background:transparent !important;
+}
+/*
+.admlogo {
+	width: 204px;
+	margin-left:(100%/2)-102;
+	margin-right:(100%/2)-102;
+	float:left;
+	background-image:url(../img/logobg1.gif);
+	background-size:75px 75px;
+	background-repeat:no-repeat;
+	position:fixed;
+	z-index:1;
+}
+*/
+.row-text {
+	display:block;
+	position:relative;
+	width:40%;
+	float:left;
+	text-align:center;
+	height: 75px;
+	line-height:75px;
+	font-size:20px; /*20px*/
+	/*padding-top: 2.5%;*/
+}
+@media (max-width: 510px) {
+  .row-text {
+    font-size: 17px;
+  }
+}
+@media (max-width: 430px) {
+  .row-text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .row-text {
+    font-size: 12px;
+  }
+}
+
+.adm_row-text {
+	width:200px !important;
+	font-size:16px !important;
+	text-align:center !important;
+	display:block;
+	position:relative;
+	float:left;
+	padding-top: 1%; /*2.5%*/
+}
+.adm_col {
+	height:75px;
+	margin: 0 0 0 0 !important;
+	left:0px;
+}
+a.row-text-link:active {
+	text-decoration:none;
+}
+.row-text-link-adm {
+	width:100%;
+	height:75px;
+	text-align:center;
+}
+.row-text-link {
+	height:75px;
+}
+.row ul {
+	height:100%;
+}
+.row-text a {
+	width:50%;
+	position:relative;
+	float:left;
+}
