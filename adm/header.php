@@ -17,6 +17,7 @@ include_once('fct0.php');
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/blackbarstyleadm.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/adm.css">
 <script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.jeditable.js"></script>
 <script type="text/javascript" src="../js/jquery.autogrowtextarea.js"></script>

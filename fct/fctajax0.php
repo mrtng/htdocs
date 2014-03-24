@@ -22,15 +22,15 @@ switch($_POST['suffix']) {
 		$sql ="SELECT pfad FROM `img` WHERE id = ".$id;
 		$images = $GLOBALS['DB']->query($sql);
 		?>
-        <script src='../zoom-master/jquery.zoom.js' type="text/javascript"></script>
+        <!--<script src='js/zoom/jquery.zoom.js' type="text/javascript"></script>-->
         <script type="text/javascript">
 		$(document).ready(function(){
-			$('#ex1').zoom();		 
+			$('#zoom').zoom();		 
 		});
 		</script>
 		<?php
-		$aw = "<span class='zoom' id='ex1'>
-                <img src=\"../img/shop/".$images[0]['pfad']."\" width=\"354\" height=\"531\" id='jack'>   
+		$aw = "<span class='zoom' id='zoom'>
+                <img src=\"../img/shop/".$images[0]['pfad']."\">   
                 </span>";
 		echo $aw;
 		break;

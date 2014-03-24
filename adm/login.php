@@ -14,6 +14,7 @@ include_once('fct0.php');
 
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/adm.css" />
 <!--<link rel="stylesheet" href="/css/bootstrap-responsive.css" />
 --><link rel="stylesheet" href="../css/bootstrap.css" />
 </head>

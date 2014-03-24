@@ -16,10 +16,10 @@ include_once('fct/fct0.php');
 
 <script src="js/jquery-1.8.1.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-<link rel="stylesheet" href="n64.css">
-<script src="js/mosaic/mosaic.1.0.1.js" type="text/javascript"></script>
+<!-- <link rel="stylesheet" href="n64.css"> -->
 <script src="js/orbit/jquery.orbit-1.2.3.min.js" type="text/javascript"></script>
 <script src='js/zoom/jquery.zoom.js' type="text/javascript"></script>
+<!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
 <script>
 $(document).keydown(function(evt){
     if (evt.keyCode==83 && (evt.ctrlKey)){
@@ -40,7 +40,7 @@ $(document).keydown(function(evt){
 -->
 <script type="text/javascript">
 		$(document).ready(function(){
-			$('#ex1').zoom();		 
+			$('#zoom').zoom();		 
 		});
 </script>
 <script type="text/javascript">
@@ -67,42 +67,42 @@ $(document).keydown(function(evt){
  });
 </script>
 <script type="text/javascript">  
-jQuery(function($){
-	$('.bar').mosaic({
-		animation	:	'slide',
-		speed : 250,
-	 	opacity : 1,
-		preload : 0,
-		anchor_x : 'bottom',
-		anchor_y : 'left',
-		hover_x : '0px',
-		hover_y : '0px'
-	});
-});
+// jQuery(function($){
+// 	$('.bar').mosaic({
+// 		animation	:	'slide',
+// 		speed : 250,
+// 	 	opacity : 1,
+// 		preload : 0,
+// 		anchor_x : 'bottom',
+// 		anchor_y : 'left',
+// 		hover_x : '0px',
+// 		hover_y : '0px'
+// 	});
+// });
 </script>
 <script>
 function imgchange(id) {
-$('#img_img').load('fct/fctajax0.php',{'id':id, 'suffix':'imgchange'});
-$('#ex1').zoom();
+  $('#zoom-wrapper').load('fct/fctajax0.php',{'id':id, 'suffix':'imgchange'});
+  $('#zoom').zoom();
 }
 </script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/orbit-1.2.3.css">
-<link rel="stylesheet" href="css/mosaic.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/blackbarstyle.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 
-<link rel="apple-touch-icon" href="favicon.gif">
-<link rel="icon" href="favicon.gif">
+<link rel="apple-touch-icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico">
 <!--[if IE]><link rel="shortcut icon" href="../favicon.ico"><![endif]-->
 <!-- or, set /favicon.ico for IE10 win -->
 <meta name="msapplication-TileColor" content="#D83434">
-<meta name="msapplication-TileImage" content="../favicon.gif">
-<link rel="apple-touch-icon-precomposed" href="../favicon.gif"> <!--apple-touch-icon-152x152-precomposed-->
+<meta name="msapplication-TileImage" content="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="favicon.ico"> <!--apple-touch-icon-152x152-precomposed-->
 
 <title><?php
     	if($titel != "") echo $titel;

@@ -1,3 +1,4 @@
+</div>
 <div class="footer">
 <p>S E A S  &copy; <?php
 function rome($N){
@@ -7,12 +8,16 @@ function rome($N){
         return $s;
 }
 
-if(date(Y) == 2013) {
-  echo 'MMXIII<br>';
-}
-else {
-  echo 'MMXIII-'.$s;
-}
+//TODO
+//echo rome(date(Y));
+echo "MMXIV";
+
+// if(date(Y) == 2013) {
+//   echo 'MMXIII<br>';
+// }
+// else {
+//   echo 'MMXIII-'.rome(date(Y));
+// }
 
 ?>
 </p>

@@ -1,0 +1,220 @@
+/*ADM*/
+a:link, a:visited {
+  text-decoration:none;
+  color: #676767;
+}
+a:focus, a:hover {
+  text-decoration:none;
+  color:#454545;
+}
+.adm_table {
+  width: 100%;
+  font-size: 13px;
+}
+.producttable tr:nth-child(odd){ background-color:#e9e9e9; }
+.producttable tr:nth-child(even)    { background-color:#ffffff; }
+
+.producttable tr:nth-child(odd):hover { background-color:#e4e4e4; }
+.producttable tr:nth-child(even):hover { background-color:#fafafa; }
+.content {
+  height:30px;
+  font-size:13px;
+  border:1px #CCCCCC;
+}
+.content:hover {
+  border:1px #CCCCCC;
+}
+.content-button {
+  background:none;
+  border:none;
+  color:#676767;
+}
+.content-button:hover {
+  color:#454545;
+}
+
+.headline {
+  background-color:#C9C9C9 !important;
+  color:#000 !important;
+  /*font-weight:bold;*/
+  font-size:16px;
+  height:24px;
+}
+.headline-order {
+  background-color:#111; 
+  color:#FFF; 
+  font-size:18px; 
+  line-height:28px; 
+  padding-left:21px;
+}
+.headline div {
+  -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0 0 3px rgba(0,0,0,0.8);
+  box-shadow: 0 0 3px rgba(0,0,0,0.8);
+  border-radius: 3px;
+  border:2px solid !important;
+  margin-bottom:30px;
+}
+#textinput {
+  border:1px !important;
+}
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+.img-rounded {
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+.img-polaroid {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.img-circle {
+  -webkit-border-radius: 500px;
+     -moz-border-radius: 500px;
+          border-radius: 500px;
+}
+.edit {
+  height: 20px;
+  padding: 0px;
+  border-spacing: 0px;
+}
+.edit_area {
+  padding:0px;
+  width:550px;
+}
+.editicon {
+  color:#666;
+}
+
+.magnify>img {
+  display:none;
+}
+td:hover > a > form > .filebutton > .magnify > img {
+  display:block;
+}
+.magnify-img {
+  position:absolute;
+  /*top:15%;
+  right:5%;*/
+  width:100px;
+  height:150px;
+  margin-top: -19px;
+}
+.formtextarea{
+  overflow:hidden;
+  height:auto;
+  width:326px;
+}/*
+.content input[type="text"] {
+  background-color:#fff;
+  border-width: 1px;
+  border-color: #676767;
+}
+*/
+.edit > form > input[type="text"] {
+  background-color:#000;
+}
+label.filebutton {
+    width:120px;
+    height:40px;
+    overflow:hidden;
+    position:relative;
+  top: 6px;
+}
+
+label span input {
+    z-index: 999;
+    line-height: 0;
+    font-size: 50px;
+    position: absolute;
+    top: -2px;
+    left: -7000px;
+    opacity: 1;
+    filter: alpha(opacity = 1);
+    -ms-filter: "alpha(opacity=0)";
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+    padding:0;
+}
+
+
+
+
+/*L O G I N*/
+.loginform {
+    width:300px;
+    height:300px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-150px 0 0 -150px;
+  text-align:center;
+}
+.loginform form input[type="submit"] {
+  position: absolute; 
+  left: -9999px; 
+  width: 1px; 
+  height: 1px;
+}
+.loginformheader {
+  letter-spacing:3.3em;
+  text-align:center;
+  padding-left: 35px;
+  font-family: 'Helvetica Neue', HelveticaNeue-Light, Helvetica, Arial, sans-serif;
+}
+.logincontent {
+    width:300px;
+  height:170px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-85px 0 0 -150px;
+}
+.zentrieren {
+    margin:0 auto 10px auto !important;
+  width:100%;
+}
+.loginunsuccessful {
+  line-height: 20px; 
+  height:20px; 
+  margin-bottom:0px !important;
+  color: #CC0000;
+  font-weight:lighter;
+  letter-spacing:0.1em;
+}
+
+.input-prepend-allrounded input {  
+  -webkit-border-radius: 4px 4px 4px 4px !important;
+    -moz-border-radius: 4px 4px 4px 4px !important;
+    border-radius: 4px 4px 4px 4px !important;
+  width: 286px;
+}
+
+
+.loginloadimg {
+  width:31px;
+  height:31px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-15px 0 0 -15.5px;
+}
+.loginloadimg img {
+  -webkit-filter: invert(100%)
+}

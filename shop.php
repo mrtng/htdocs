@@ -9,30 +9,27 @@
 ?> 
 <div class="grid cf"> 
   <?php        
-        $rows = $GLOBALS['DB']->query($query);
-        
-        foreach ($rows as $row)
-        {
+    $rows = $GLOBALS['DB']->query($query);
+    
+    foreach ($rows as $row)
+    {
   ?>
-  <div class="grid-element">
-    <div class="grid-element-content">
-    <a target="_blank" class="mosaic-overlay">
-      <div class="grid-details">
+    <div class="grid-element">
+      <a href="product.php?id=<?php echo $row['id']; ?>">
+        <div class="grid-element-img">
+          <img src="img/shop/<?php echo $row['pfad']; ?>">
+        </div>
+        <div class="grid-element-details">
           <h4><?php echo $row['name']; ?></h4>
-      </div>
-    </a>
-    <div class="grid-img">
-        <a href="product.php?id=<?php echo $row['id']; ?>">
-            <img src="img/shop/<?php echo $row['pfad']; ?>" width="270" height="405">
-        </a>
+        </div>
+      </a>
     </div>
-  </div>
-  </div>
-      <?php
-      }
-    ?>
-    <br clear="all">
+  <?php
+    }
+  ?>
 </div>
+
+
 <?php
 	include("footer.php");
 ?>
